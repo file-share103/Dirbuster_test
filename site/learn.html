@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learn: DirBuster Demo</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="/">DirBuster Demo</a>
+    </div>
+
+    <div class="hero">
+      <h1>How to run the demo safely</h1>
+      <p>This page shows how to start the local server and run directory brute force tools against it.</p>
+    </div>
+
+    <div class="card">
+      <h3>Start the demo server</h3>
+      <ol>
+        <li>Ensure Python 3 is installed.</li>
+        <li>From the project root, start the server:
+          <pre><code>python server.py --host 0.0.0.0 --port 8000</code></pre>
+        </li>
+        <li>Visit the site:
+          <ul>
+            <li><code>http://127.0.0.1:8000</code> (local)</li>
+            <li><code>http://YOUR_LAN_IP:8000</code> (from other devices on the same network)</li>
+          </ul>
+        </li>
+        <li>If you cannot reach it from other devices, allow Python through your firewall or open TCP port 8000.</li>
+      </ol>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>Run directory brute-force tools</h3>
+      <p><strong>Gobuster (recommended):</strong></p>
+      <pre><code>gobuster dir -u http://YOUR_LAN_IP:8000 -w ./wordlists/demo-common.txt -t 30 -x html,txt,zip</code></pre>
+      <p><strong>DirBuster (GUI):</strong> Target URL = <code>http://YOUR_LAN_IP:8000</code>, Wordlist = <code>./wordlists/demo-common.txt</code>, Threads = 30, File extensions = <code>html,txt,zip</code>.</p>
+      <p>Watch for HTTP 200/301/403 responses. You should find <code>/admin/</code>, <code>/backup/</code>, <code>/private/</code> (403), <code>/old/</code>, <code>/uploads/</code>, and <code>/robots.txt</code>.</p>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>What this demonstrates</h3>
+      <ul>
+        <li><strong>Security through obscurity is weak</strong>: hidden paths can be discovered.</li>
+        <li><strong>Robots.txt leakage</strong>: sensitive paths sometimes get listed to dissuade crawlers.</li>
+        <li><strong>Backups in web root</strong>: risk of downloading configs or old code.</li>
+        <li><strong>403 vs file access</strong>: <code>/private/</code> returns 403, but files like <code>/private/secrets.txt</code> may still be reachable.</li>
+      </ul>
+    </div>
+
+    <footer>
+      Only test on systems you own or have explicit permission to test.
+    </footer>
+  </div>
+</body>
+</html>

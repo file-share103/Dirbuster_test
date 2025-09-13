@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DirBuster Demo Site</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="/">DirBuster Demo</a>
+      <nav>
+        <a href="/learn.html">Learn</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <h1>Welcome to the DirBuster Demo</h1>
+      <p>This site intentionally exposes and hides a few directories and files to practice directory brute forcing in a safe environment on your own network.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Try discovering hidden paths</h3>
+        <p>Use a tool like DirBuster or Gobuster against this site after you start the local server.</p>
+        <a class="button" href="/learn.html">Read the guide</a>
+      </div>
+      <div class="card">
+        <h3>Public endpoints</h3>
+        <ul>
+          <li><a href="/">/</a></li>
+          <li><a href="/learn.html">/learn.html</a></li>
+          <li><a href="/robots.txt">/robots.txt</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What to look for</h3>
+        <ul>
+          <li>Directories like <code>/admin/</code>, <code>/backup/</code>, <code>/private/</code>, <code>/old/</code>, <code>/uploads/</code></li>
+          <li>Files like <code>/robots.txt</code>, <code>/.well-known/</code>, <code>/sitemap.xml</code> (if present)</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      Educational use only on networks you own or have explicit permission to test.
+    </footer>
+  </div>
+</body>
+</html>

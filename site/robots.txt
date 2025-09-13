@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /backup/
+Disallow: /private/
+Disallow: /old/
+# Hint: There's an uploads area too, but it's not disallowed here ;)

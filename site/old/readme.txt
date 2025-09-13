@@ -1,0 +1,1 @@
+Legacy readme: This directory simulates an old version of the site left behind.

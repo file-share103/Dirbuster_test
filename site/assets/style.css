@@ -1,0 +1,16 @@
+/* Simple styles for the demo site */
+:root { --bg:#0f172a; --panel:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); }
+.container { max-width: 900px; margin: 0 auto; padding: 24px; }
+.header { display:flex; justify-content: space-between; align-items:center; padding: 16px 0; }
+.header a { color: var(--text); text-decoration: none; font-weight: 600; }
+.hero { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0)); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; }
+.hero h1 { margin: 0 0 8px 0; font-size: 28px; }
+.hero p { margin: 0; color: var(--muted); }
+.card-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
+.card { background: var(--panel); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; }
+.card h3 { margin-top: 0; }
+.card a.button { display:inline-block; margin-top: 8px; background: var(--accent); color: #062212; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+footer { margin: 32px 0; color: var(--muted); font-size: 14px; }
+code, pre { background:#0b1220; border:1px solid rgba(255,255,255,0.08); padding:2px 6px; border-radius:6px; color:#c7d2fe; }

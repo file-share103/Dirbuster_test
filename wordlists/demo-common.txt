@@ -1,0 +1,12 @@
+
+admin
+backup
+private
+old
+uploads
+robots.txt
+index.html
+assets
+secrets.txt
+site-backup.zip
+topsecret
